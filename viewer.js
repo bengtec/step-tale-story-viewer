@@ -23,8 +23,6 @@ const $ = (id) => document.getElementById(id);
 function main() {
   bind();
   bindLoader();
-  const preset = new URLSearchParams(window.location.search).get("url");
-  if (preset) loadUrl(preset);
 }
 
 function bindLoader() {
@@ -35,11 +33,6 @@ function bindLoader() {
     const file = $("file").files && $("file").files[0];
     $("file").value = "";
     if (file) readStoryFile(file);
-  });
-  $("url-form").addEventListener("submit", (event) => {
-    event.preventDefault();
-    const url = $("url").value.trim();
-    if (url) loadUrl(url);
   });
   const drop = $("drop");
   ["dragenter", "dragover"].forEach((name) => {
@@ -71,18 +64,6 @@ function readStoryFile(file) {
   };
   reader.onerror = () => showGateError("The file could not be read.");
   reader.readAsText(file);
-}
-
-async function loadUrl(url) {
-  showGateError("");
-  $("logline").textContent = "Loading " + url;
-  try {
-    const res = await fetch(url);
-    if (!res.ok) throw new Error("That URL returned " + res.status + ".");
-    showStory(await res.json(), url);
-  } catch (err) {
-    showGateError(err.message || "The URL could not be read. The host must allow cross-origin requests.");
-  }
 }
 
 function showStory(data, source) {
