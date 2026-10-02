@@ -125,27 +125,11 @@ button { cursor: pointer; }
   grid-template-columns: 1fr 380px;
 }
 
-.file, .url-form button {
+.file {
   border: 1px solid var(--line);
   background: var(--bg-raise);
   border-radius: 999px;
   padding: 8px 12px;
-  font-family: system-ui, sans-serif;
-  font-size: 14px;
-}
-
-.url-form {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-}
-
-.url-form input {
-  background: var(--bg-raise);
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  padding: 8px 12px;
-  min-width: 220px;
   font-family: system-ui, sans-serif;
   font-size: 14px;
 }
@@ -406,11 +390,6 @@ button { cursor: pointer; }
   font-family: system-ui, sans-serif;
   font-size: 12px;
   justify-content: space-between;
-}
-
-.foot code {
-  font-family: ui-monospace, monospace;
-  color: var(--choice);
 }
 
 .legend i {

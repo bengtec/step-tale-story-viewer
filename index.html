@@ -16,10 +16,6 @@
     <div class="tools">
       <button type="button" class="file" id="upload">Upload JSON</button>
       <input id="file" type="file" accept="application/json,.json" hidden>
-      <form id="url-form" class="url-form">
-        <input id="url" type="url" placeholder="https://…/story.json" aria-label="Public story JSON URL">
-        <button type="submit">Load URL</button>
-      </form>
       <input class="search" id="search" type="search" placeholder="Find a beat or line" aria-label="Find a beat or line" disabled>
       <button type="button" id="fit" disabled>Fit</button>
     </div>
@@ -55,7 +51,7 @@
       <i class="c"></i>choice
       <i class="e"></i>ending
     </div>
-    <div id="hint">Drag the map. Scroll to zoom. A public file can also be loaded with <code>?url=</code>.</div>
+    <div id="hint">Drag the map. Scroll to zoom.</div>
   </footer>
 </div>
 <script src="viewer.js"></script>
