@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Story paths</title>
+<link rel="stylesheet" href="viewer.css">
+</head>
+<body>
+<div class="app">
+  <header class="top">
+    <div class="brand">
+      <h1 id="title">Story paths</h1>
+      <p id="logline">Upload a story.json. It stays in this browser and is not stored.</p>
+    </div>
+    <div class="tools">
+      <button type="button" class="file" id="upload">Upload JSON</button>
+      <input id="file" type="file" accept="application/json,.json" hidden>
+      <form id="url-form" class="url-form">
+        <input id="url" type="url" placeholder="https://…/story.json" aria-label="Public story JSON URL">
+        <button type="submit">Load URL</button>
+      </form>
+      <input class="search" id="search" type="search" placeholder="Find a beat or line" aria-label="Find a beat or line" disabled>
+      <button type="button" id="fit" disabled>Fit</button>
+    </div>
+    <div class="modes" role="group" aria-label="View">
+      <button type="button" id="mode-map" aria-pressed="true" disabled>Map</button>
+      <button type="button" id="mode-walk" aria-pressed="false" disabled>Walk</button>
+    </div>
+  </header>
+  <div class="filters" id="filters">
+    <span class="label">Endings</span>
+  </div>
+  <div class="stage empty" id="stage">
+    <div class="gate" id="gate">
+      <div class="drop" id="drop">
+        <h2>Upload a story file</h2>
+        <button type="button" class="file" id="upload-gate">Upload JSON</button>
+        <p>Or drop a <code>story.json</code> here. It needs <code>start</code> and a <code>beats</code> map. The file is read in this browser and is not stored on a server.</p>
+        <p id="gate-error" class="gate-error"></p>
+      </div>
+    </div>
+    <div class="map" id="map" tabindex="0" aria-label="Story graph">
+      <div class="world" id="world">
+        <svg class="edges" id="edges"></svg>
+        <div class="nodes" id="nodes"></div>
+      </div>
+    </div>
+    <aside class="panel" id="panel" aria-live="polite"></aside>
+    <div class="walk" id="walk"></div>
+  </div>
+  <footer class="foot">
+    <div class="legend" id="legend">
+      <i class="t"></i>travel
+      <i class="c"></i>choice
+      <i class="e"></i>ending
+    </div>
+    <div id="hint">Drag the map. Scroll to zoom. A public file can also be loaded with <code>?url=</code>.</div>
+  </footer>
+</div>
+<script src="viewer.js"></script>
+</body>
+</html>
