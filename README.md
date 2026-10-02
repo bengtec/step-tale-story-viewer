@@ -10,4 +10,6 @@ Host it with GitHub Pages from the `main` branch, folder `/`. A story on the pub
 https://<user>.github.io/<repo>/?url=https://raw.githubusercontent.com/<user>/<repo>/<ref>/story.json
 ```
 
+https://bengtec.github.io/step-tale-story-viewer/
+
 The URL must allow cross-origin reads. A file chosen on your computer does not need that.
